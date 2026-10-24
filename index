@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Portal</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; transition: background 0.5s; }
+        
+        /* Login Card Styles */
+        .card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; }
+        .card h2 { color: #1a1a1a; margin-bottom: 0.5rem; }
+        .card p { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        input { width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        button { width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #1d4ed8; }
+        #error-msg { color: #dc2626; font-size: 0.85rem; margin-bottom: 1rem; display: none; }
+
+        /* Success Dashboard Styles (Hidden by default) */
+        #success-page { display: none; text-align: left; width: 80%; max-width: 900px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .nav-bar { border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 2rem; display: flex; justify-content: space-between; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .stat-card { background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="login-interface">
+        <h2>Welcome Back</h2>
+        <p>Please enter your credentials to access the secure network.</p>
+        <div id="error-msg">Invalid credentials. Attempts remaining: <span id="count">3</span></div>
+        <input type="text" id="username" placeholder="Username">
+        <input type="text" id="password" placeholder="Password">
+        <button onclick="validateLogin()">Authorize Session</button>
+    </div>
+
+    <div id="success-page">
+        <div class="nav-bar">
+            <h2 style="margin:0; color: #2563eb;">Mainframe Dashboard</h2>
+            <span style="color: #666;">User: AxmeetBasak</span>
+        </div>
+        <h3>System Overview</h3>
+        <div class="stat-grid">
+            <div class="stat-card"><strong>Network Status</strong><br><span style="color: green;">● Online</span></div>
+            <div class="stat-card"><strong>Active Nodes</strong><br>14 Available</div>
+            <div class="stat-card"><strong>Security Level</strong><br>Tier 4 Alpha</div>
+        </div>
+        <p style="margin-top: 2rem; color: #666;">Welcome to the secure internal interface. All activity is logged and encrypted.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
